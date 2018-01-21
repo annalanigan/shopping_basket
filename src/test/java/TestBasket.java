@@ -65,6 +65,13 @@ public class TestBasket {
         assertEquals(0, myBasket.countItems());
     }
 
+    @Test
+    public void canCalculateTotalCost(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        assertEquals(21.50, myBasket.TotalCost(), 0.01);
+    }
+
 }
 
 

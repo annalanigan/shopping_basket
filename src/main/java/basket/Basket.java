@@ -34,4 +34,12 @@ public class Basket {
     public void emptyBasket() {
         items.clear();
     }
+
+    public double TotalCost(){
+        double total = 0;
+        for (Item item : items){
+            total += item.getPrice();
+        }
+        return total;
+    }
 }
