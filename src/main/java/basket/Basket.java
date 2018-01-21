@@ -42,6 +42,20 @@ public class Basket {
         return total;
     }
 
+    public void addDiscounts(IDiscount discount) {
+        discounts.add(discount);
+    }
 
+    public int countDiscounts(){
+        return discounts.size();
+    }
+
+    public double discountCost(){
+        double total = 0;
+        for (IDiscount discount : discounts){
+            total = discount.applyDiscount(items, total);
+        }
+        return total;
+    }
 
 }
