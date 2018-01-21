@@ -14,7 +14,6 @@ public class Basket {
         this.discounts = new ArrayList<>();
     }
 
-
     public void addItem(Item item1) {
         items.add(item1);
     }
@@ -42,4 +41,7 @@ public class Basket {
         }
         return total;
     }
+
+
+
 }
