@@ -15,4 +15,11 @@ public class Basket {
     }
 
 
+    public void addItem(Item item1) {
+        items.add(item1);
+    }
+
+    public int countItems() {
+        return items.size();
+    }
 }
