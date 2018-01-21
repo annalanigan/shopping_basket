@@ -30,4 +30,8 @@ public class Basket {
     public void removeLastItem() {
         items.remove(countItems()-1);
     }
+
+    public void emptyBasket() {
+        items.clear();
+    }
 }
