@@ -22,4 +22,12 @@ public class Basket {
     public int countItems() {
         return items.size();
     }
+
+    public void removeItem(Item item2) {
+        items.remove(item2);
+    }
+
+    public void removeLastItem() {
+        items.remove(countItems()-1);
+    }
 }

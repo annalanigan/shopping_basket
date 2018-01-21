@@ -28,6 +28,33 @@ public class TestBasket {
         assertEquals(1, myBasket.countItems());
     }
 
+    @Test
+    public void canAddMultipleItemsToBasket(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        assertEquals(3, myBasket.countItems());
+    }
+
+    @Test
+    public void canRemoveItemFromBasket(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.removeItem(item2);
+        assertEquals(2, myBasket.countItems());
+    }
+
+    @Test
+    public void canRemoveLastItemFromBasket(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.removeLastItem();
+        myBasket.removeLastItem();
+        assertEquals(1, myBasket.countItems());
+    }
+
 }
 
 
