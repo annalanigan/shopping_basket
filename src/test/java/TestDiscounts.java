@@ -43,4 +43,39 @@ public class TestDiscounts {
         assertEquals(41.39, tenPercentDiscount.applyDiscount(myBasket, 45.99), 0.1);
     }
 
+    @Test
+    public void wontTake10PercentifLessThan20(){
+        myBasket.remove(item4);
+        myBasket.remove(item2);
+        assertEquals(14.49, tenPercentDiscount.applyDiscount(myBasket, 14.49), 0.01);
+    }
+
+    @Test
+    public void canUseBogofDiscount(){
+        myBasket.add(item1);
+        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+    }
+
+    @Test
+    public void canUseBogofDiscount__multipleItems(){
+        myBasket.add(item1);
+        myBasket.add(item2);
+        myBasket.add(item3);
+        myBasket.add(item4);
+        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+    }
+
+    @Test
+    public void canUseBogofDiscount__tripleItems(){
+        myBasket.add(item1);
+        myBasket.add(item1);
+        myBasket.add(item2);
+        myBasket.add(item2);
+        assertEquals(67.49, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+    }
+
+    @Test
+    public void canUseStoreCard(){
+        assertEquals(45.07, storeCard.applyDiscount(myBasket, 45.99), 0.01);
+    }
 }

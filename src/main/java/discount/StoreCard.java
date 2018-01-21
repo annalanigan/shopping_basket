@@ -8,7 +8,9 @@ public class StoreCard implements IDiscount{
 
     @Override
     public double applyDiscount(ArrayList<Item> items, double total) {
-        return 0;
+        double storeCardDiscount = total * 0.02;
+        double finalTotal = total - storeCardDiscount;
+        return finalTotal;
     }
 
 }
