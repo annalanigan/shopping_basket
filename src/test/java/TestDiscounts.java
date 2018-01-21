@@ -53,7 +53,7 @@ public class TestDiscounts {
     @Test
     public void canUseBogofDiscount(){
         myBasket.add(item1);
-        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 55.49), 0.01);
     }
 
     @Test
@@ -62,7 +62,7 @@ public class TestDiscounts {
         myBasket.add(item2);
         myBasket.add(item3);
         myBasket.add(item4);
-        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+        assertEquals(45.99, bogofDiscount.applyDiscount(myBasket, 91.98), 0.01);
     }
 
     @Test
@@ -71,7 +71,7 @@ public class TestDiscounts {
         myBasket.add(item1);
         myBasket.add(item2);
         myBasket.add(item2);
-        assertEquals(67.49, bogofDiscount.applyDiscount(myBasket, 0), 0.01);
+        assertEquals(67.49, bogofDiscount.applyDiscount(myBasket, 88.99), 0.01);
     }
 
     @Test

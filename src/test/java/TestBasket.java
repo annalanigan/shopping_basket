@@ -78,7 +78,7 @@ public class TestBasket {
     public void canCalculateTotalCost(){
         myBasket.addItem(item1);
         myBasket.addItem(item2);
-        assertEquals(21.50, myBasket.TotalCost(), 0.01);
+        assertEquals(21.50, myBasket.totalCost(), 0.01);
     }
 
     @Test
@@ -109,14 +109,102 @@ public class TestBasket {
     public void canApplyTenPercentInBasket(){
         myBasket.addItem(item1);
         myBasket.addItem(item2);
-        myBasket.addDiscounts(bogof);
         myBasket.addDiscounts(tenPercent);
         assertEquals(19.35, myBasket.discountCost(), 0.01);
     }
 
     @Test
     public void canApplyStoreCardInBasket(){
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(24.49, myBasket.totalCost(), 0.01);
+        assertEquals(24.00, myBasket.discountCost(), 0.01);
+    }
 
+    @Test
+    public void canApplyMultipleDiscounts__1(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(bogof);
+        myBasket.addDiscounts(tenPercent);
+        assertEquals(41.39, myBasket.discountCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyMultipleDiscounts__2(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(tenPercent);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(51.15, myBasket.discountCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyMultipleDiscounts__3(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.addItem(item3);
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(bogof);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(49.96, myBasket.discountCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyMultipleDiscounts__4(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.addItem(item3);
+        myBasket.addItem(item3);
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(bogof);
+        myBasket.addDiscounts(tenPercent);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(53.34, myBasket.discountCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyMultipleDiscounts__5(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item2);
+        myBasket.addItem(item3);
+        myBasket.addItem(item4);
+        myBasket.addItem(item4);
+        myBasket.addItem(item4);
+        myBasket.addItem(item4);
+        myBasket.addDiscounts(bogof);
+        myBasket.addDiscounts(tenPercent);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(57.76, myBasket.discountCost(), 0.01);
+    }
+
+    @Test
+    public void canApplyMultipleDiscounts__6(){
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addItem(item1);
+        myBasket.addDiscounts(bogof);
+        myBasket.addDiscounts(tenPercent);
+        myBasket.addDiscounts(storeCard);
+        assertEquals(25.14, myBasket.discountCost(), 0.01);
     }
 
 }

@@ -34,7 +34,7 @@ public class Basket {
         items.clear();
     }
 
-    public double TotalCost(){
+    public double totalCost(){
         double total = 0;
         for (Item item : items){
             total += item.getPrice();
@@ -51,7 +51,7 @@ public class Basket {
     }
 
     public double discountCost(){
-        double total = 0;
+        double total = totalCost();
         for (IDiscount discount : discounts){
             total = discount.applyDiscount(items, total);
         }
