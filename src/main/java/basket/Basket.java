@@ -50,6 +50,8 @@ public class Basket {
         return discounts.size();
     }
 
+    // rework this to make the order mandatory rather than just chance?
+
     public double discountCost(){
         double total = totalCost();
         for (IDiscount discount : discounts){

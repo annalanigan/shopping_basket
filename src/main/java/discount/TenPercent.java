@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class TenPercent implements IDiscount {
 
+    // change this to be generic percentage discount rather than a 10% only...
+
     @Override
     public double applyDiscount(ArrayList<Item> items, double total) {
         if (total >= 20){
